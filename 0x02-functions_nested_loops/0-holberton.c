@@ -10,10 +10,11 @@ int main(void)
 	int ind = 0;
 
 		while (string[ind])
-		{
-			_putchar(string[ind]);
-			ind++;
-		}
-	_putchar('\n');
-	return (0);
+			if (ind <= 9)
+			{
+				_putchar(string[ind]);
+				ind++;
+			}
+		_putchar('\n');
+		return (0);
 }
