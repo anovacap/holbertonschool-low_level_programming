@@ -19,7 +19,7 @@ int  _islower(int c);
 int  _isalpha(int c);
 int  print_sign(int n);
 int  _abs(int i);
-void print_last(int i);
+int  print_last(int i);
 void jack_bauer(void);
 void times_table(void);
 #endif 
