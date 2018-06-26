@@ -8,7 +8,7 @@
  * _isalpha - checks is charcter is alphabetic
  * print_sign - checks if number is + - 0
  * _abs - computes the absolute value of an integer
- * print_last - prints the last digit of a number
+ * print_last_digit - prints the last digit of a number
  * jack_bauer - prints minutes of day 00:00-24:59
  * times_table - prints 9 times tables
  */
@@ -19,7 +19,7 @@ int  _islower(int c);
 int  _isalpha(int c);
 int  print_sign(int n);
 int  _abs(int i);
-int  print_last(int i);
+int  print_last_digit(int i);
 void jack_bauer(void);
 void times_table(void);
 #endif 
