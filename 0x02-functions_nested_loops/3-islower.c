@@ -1,4 +1,5 @@
 #include "holberton.h"
+
 /**
  * is_lower - checks for lowercase character
  * @c: the character to be checked
@@ -8,10 +9,15 @@
 int _islower(int c)
 {
 	int low;
+	int num = c;
 
-	if (c > 96 && c < 123)
+	if (num > 96 && num < 123)
+	{
 		low = 1;
+	}
 	else
+	{
 		low = 0;
+	}
 	return (low);
 }
