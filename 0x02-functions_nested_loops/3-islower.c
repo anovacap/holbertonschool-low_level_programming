@@ -11,7 +11,7 @@ int _islower(int c)
 	int low;
 	int num = c;
 
-	if (num > 96 && num < 123)
+	if (num >= 'a' && num <= 'z')
 	{
 		low = 1;
 	}
