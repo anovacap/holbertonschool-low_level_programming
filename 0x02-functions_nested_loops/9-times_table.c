@@ -19,10 +19,20 @@ void times_table(void)
 			mult = num_1 * num_2;
 			tens = mult / 10;
 			ones = mult % 10;
-			if (tens == 0 && ones < 10)
+			if (mult == 0)
 			{
-				if (num_2 > 0)
+				if (num_1 == 0 && num_2 > 0)
 					_putchar (' ');
+				_putchar (ones + '0');
+				if (num_2 < 9)
+				{
+					_putchar (',');
+					_putchar (' ');
+				}
+			}
+			else if (mult < 10)
+			{
+				_putchar (' ');
 				_putchar (ones + '0');
 			}
 
@@ -31,10 +41,12 @@ void times_table(void)
 				_putchar (tens + '0');
 				_putchar (ones + '0');
 			}
-			if (num_2 >= 0 && num_2 < 9)
+			if (num_2 < 9 && mult > 0)
+			{
 				_putchar(',');
 				_putchar(' ');
+			}
 		}
 		_putchar ('\n');
-	}
+       	}
 }
