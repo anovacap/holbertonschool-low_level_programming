@@ -1,6 +1,6 @@
 #include "holberton.h"
 /**
- * times_table prints 9 times table 0
+ * times_table -  prints 9 times table 0
  *
  * Return: Nothing if successful
  */
