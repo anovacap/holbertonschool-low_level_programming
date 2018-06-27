@@ -13,6 +13,7 @@
  * times_table - prints 9 times tables
  * add - adds 2 numbers together
  * print_to_98 - prints numbers from n to 98
+ * print_times_table - prints n times table, start at 0
  */
 void  _putchar(char c);
 void print_alphabet(void);
@@ -26,4 +27,5 @@ void jack_bauer(void);
 void times_table(void);
 int add(int a, int b);
 void print_to_98(int n);
-#endif 
+void print_times_table(int n);
+#endif
