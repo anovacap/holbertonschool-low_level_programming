@@ -1,4 +1,3 @@
-#include "holberton.h"
 #include <stdio.h>
 /**
  * main - prints the first 50 Fibonacci numbers
@@ -9,8 +8,8 @@ int main(void)
 {
 	int counter;
 	unsigned long fib;
-	int first = 0;
-	int second = 1;
+	unsigned long first = 0;
+	unsigned long second = 1;
 
 	for (counter = 0; counter < 51; counter++)
 	{
