@@ -7,13 +7,16 @@
  */
 int main(void)
 {
-	int counter = 1;
+	int counter;
 
-	while (counter < 1024)
+	for (counter = 1; counter < 1025; counter++)
 	{
 		if (counter % 3 == 0 || counter % 5 == 0)
-			printf("%i, ", counter);
-		counter++;
+		{
+			printf("%i", counter);
+			if (counter < 1023)
+				printf(", ");
+		}
 	}
 	printf("\n");
 	return (0);
