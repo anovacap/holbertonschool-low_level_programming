@@ -14,6 +14,7 @@
  * add - adds 2 numbers together
  * print_to_98 - prints numbers from n to 98
  * print_times_table - prints n times table, start at 0
+ *
  */
 void  _putchar(char c);
 void print_alphabet(void);
