@@ -11,13 +11,13 @@ int main(void)
 	unsigned long first = 0;
 	unsigned long second = 1;
 
-	for (counter = 0; counter < 51; counter++)
+	for (counter = 0; counter < 50; counter++)
 	{
 		fib = first + second;
 		first = second;
 		second = fib;
 		printf("%lu", fib);
-		if (counter < 50)
+		if (counter < 49)
 			printf(", ");
 	}
 	printf("\n");
