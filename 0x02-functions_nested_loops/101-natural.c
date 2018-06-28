@@ -10,12 +10,12 @@ int main(void)
 {
 	int counter = 1;
 
-	for (; counter < 1024; counter++)
+	for (; counter <= 1024; counter++)
 	{
 		if (counter % 3 == 0 || counter % 5 == 0)
 		{
 			printf("%i", counter);
-			if (counter < 1023)
+			if (counter < 1024)
 				printf(", ");
 		}
 	}
