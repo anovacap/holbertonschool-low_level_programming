@@ -9,7 +9,7 @@ int main(void)
 {
 	int counter = 1;
 
-	for (; counter < 1025; counter++)
+	for (; counter < 1024; counter++)
 	{
 		if (counter % 3 == 0 || counter % 5 == 0)
 		{
