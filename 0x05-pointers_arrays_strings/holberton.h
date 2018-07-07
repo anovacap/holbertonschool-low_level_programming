@@ -33,8 +33,16 @@
  * puts2 - prints one char out of 2 of a string
  * puts_half - prints half of a string
  * print_array - prints n elements of an array of integers
- * *_strcpy - copies the string pointed to src to the buffer pointed to dest
- * *_strcat - concatenates two strings
+ * _strcpy - copies the string pointed to src to the buffer pointed to dest
+ * _strcat - concatenates two strings
+ * _strncat - concatenates two strings
+ * _strncpy - copies a string
+ * _strcmp - compares two strings
+ * reverse_array - reverses the content of an array of integers
+ * string_toupper - lowercase letters of a string to uppercase
+ * cap_string - capitalizes all words of a string
+ * leet - encodes a string into 1337 LEET
+ * rot13 - encodes a string using rot13
  */
 void  _putchar(char c);
 void print_alphabet(void);
@@ -71,4 +79,12 @@ void print_array(int *a, int n);
 char *_strcpy(char *dest, char *src);
 int _atoi(char *s);
 char *_strcat(char *dest, char *src);
+char *_strncat(char *dest, char *src, int n);
+char *_strncpy(char *dest, char *src, int n);
+int _strcmp(char *s1, char *s2);
+void reverse_array(int *a, int n);
+char *string_toupper(char *);
+char *cap_string(char *);
+char *leet(char *);
+char *rot13(char *);
 #endif
