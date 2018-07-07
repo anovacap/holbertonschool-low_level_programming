@@ -2,7 +2,7 @@
 
 /**
  * string_toupper - changes all lowercase letters of a string to uppercase
- * @i: lowercase string
+ * @s: lowercase string
  *
  * Return: char
  */
@@ -13,5 +13,5 @@ char *string_toupper(char *s)
 	for (i = 0; s[i] != '\0'; i++)
 		if (s[i] > 96 && s[i] < 123)
 			s[i] = s[i] - 32;
-	return(s);
+	return (s);
 }
