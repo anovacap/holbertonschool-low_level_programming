@@ -43,6 +43,15 @@
  * cap_string - capitalizes all words of a string
  * leet - encodes a string into 1337 LEET
  * rot13 - encodes a string using rot13
+ * _memset - fills memory with a constant byte
+ * _memcpy - copies memory area
+ * _strchr - locates a character in a string
+ * _strspn - gets the length of a prefix substring
+ * _strpbrk - searches a string for any of a set of bytes
+ * _strstr - locates a substring
+ * print_chessboard - prints the chessboard
+ * print_diagsums - sum of the two diagonals of a square matrix of integers
+ * set_string - sets the value of a pointer to a char
  */
 void  _putchar(char c);
 void print_alphabet(void);
@@ -87,4 +96,13 @@ char *string_toupper(char *);
 char *cap_string(char *);
 char *leet(char *);
 char *rot13(char *);
+char *_memset(char *s, char b, unsigned int n);
+char *_memcpy(char *dest, char *src, unsigned int n);
+char *_strchr(char *s, char c);
+unsigned int _strspn(char *s, char *accept);
+char *_strpbrk(char *s, char *accept);
+char *_strstr(char *haystack, char *needle);
+void print_chessboard(char (*a)[8]);
+void print_diagsums(int *a, int size);
+void set_string(char **s, char *to);
 #endif
