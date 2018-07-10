@@ -6,7 +6,7 @@
  * @b: char goes to s
  * @n: unsigned int times s updated
  *
- * Return - updated s char
+ * Return: updated s char
  */
 char *_memset(char *s, char b, unsigned int n)
 {
