@@ -20,11 +20,11 @@ int _strlen_recursion(char *s)
  */
 int palin(char *s, int x, int length)
 {
-	if (*(s + x) != *(s + length - 1))
+	if (x >= length)
+		return (1);
+	if (s[x] != s[length])
 		return (0);
-	if (*(s + x) == *(s + length))
-		palin(s, x + 1, length - 1);
-	return (1);
+	return (palin(s, x + 1, length - 1));
 }
 /**
  * is_palindrome - 1 if a string is a palindrome and 0 if not
@@ -33,5 +33,5 @@ int palin(char *s, int x, int length)
  */
 int is_palindrome(char *s)
 {
-	return (palin(s, 0, _strlen_recursion(s)));
+	return (palin(s, 0, _strlen_recursion(s) - 1));
 }
