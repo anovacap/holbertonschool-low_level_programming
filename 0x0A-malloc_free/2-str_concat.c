@@ -3,10 +3,10 @@
 #include <stdio.h>
 
 /**
- * str_concat - concatenates two strings
- * @s1: first string
- * @s2: second string
- * Return: concatenated string
+ * _strlen - returns the length of a string
+ * @s: the string
+ *
+ * Return: int length of string
  */
 int _strlen(char *s)
 {
@@ -17,6 +17,13 @@ int _strlen(char *s)
 	return (i);
 }
 
+/**
+ * *_strcpy - copies the string pointed to by src
+ * @dest: char
+ * @src: char
+ *
+ * Return: char
+ */
 char *_strcpy(char *dest, char *src)
 {
 	int i;
@@ -27,6 +34,12 @@ char *_strcpy(char *dest, char *src)
 	return (dest);
 }
 
+/**
+ * str_concat - concatenates two strings
+ * @s1: first string
+ * @s2: second string
+ * Return: concatenated string
+ */
 char *str_concat(char *s1, char *s2)
 {
 	char *cat = NULL;
@@ -41,11 +54,8 @@ char *str_concat(char *s1, char *s2)
 		return (_strcpy(cat, s2));
 	else if (s2 == NULL)
 		return (_strcpy(cat, s1));
-	else
-	{
-		_strcpy(cat, s1);
-		for (i = 0; s2[i] != '\0'; i++)
-			cat[s1len++] = s2[i];
-		return(cat);
-	}
+	_strcpy(cat, s1);
+	for (i = 0; s2[i] != '\0'; i++)
+		cat[s1len++] = s2[i];
+	return (cat);
 }
