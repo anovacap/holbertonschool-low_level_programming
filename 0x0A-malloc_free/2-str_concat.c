@@ -57,6 +57,8 @@ char *str_concat(char *s1, char *s2)
 	s1ands2 = s1len + s2len;
 	if (s1 != NULL && s2 != NULL)
 		cat = malloc(sizeof(char) * s1ands2  + 1);
+	if (cat == NULL)
+		return (NULL);
 	_strcpy(cat, s1);
 	for (i = 0; s2[i] != '\0'; i++)
 		cat[s1len++] = s2[i];
