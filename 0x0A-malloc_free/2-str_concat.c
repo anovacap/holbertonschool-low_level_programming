@@ -49,9 +49,9 @@ char *str_concat(char *s1, char *s2)
 	int s1ands2 = s1len + s2len;
 
 	if (s1 == NULL)
-		s1 = '\0';
+		s1 = "";
 	if (s2 == NULL)
-		s2 = '\0';
+		s2 = "";
 	if (s1 != NULL && s2 != NULL)
 		cat = malloc(sizeof(char) * s1ands2  + 1);
 	_strcpy(cat, s1);
