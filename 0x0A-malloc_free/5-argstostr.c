@@ -1,5 +1,4 @@
 #include "holberton.h"
-#include <stdio.h>
 #include <stdlib.h>
 
 /**
@@ -49,5 +48,6 @@ char *argstostr(int ac, char **av)
 		ptr[x] = '\n';
 		x++;
 	}
+	ptr[x] = '\0';
 	return (ptr);
 }
