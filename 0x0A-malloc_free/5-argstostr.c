@@ -36,7 +36,7 @@ char *argstostr(int ac, char **av)
 		len += _strlen(av[i]);
 	}
 	len = len + ac;
-	ptr = malloc(sizeof(char *) + len + 1);
+	ptr = malloc(sizeof(char *) + len +1);
 	if (ptr == NULL)
 		return (NULL);
 	for (i = 0; i < ac; i++)
@@ -49,6 +49,10 @@ char *argstostr(int ac, char **av)
 		ptr[x] = '\n';
 		x++;
 	}
+	printf("x = %i\n", x);
+	printf("len = %i\n", len);
+	printf("i = %i\n", i);
+	printf("j = %i\n", j);
 	ptr[x] = '\0';
 	return (ptr);
 }
