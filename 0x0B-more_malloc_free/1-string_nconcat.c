@@ -48,7 +48,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	if (s1 == NULL)
 		s1 = "";
-	if (s1 == NULL)
+	if (s2 == NULL)
 		s2 = "";
 	s1ands2 = _strlen(s1) + _strlen(s2);
 	s1len = _strlen(s1);
@@ -69,7 +69,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		if (cat == NULL)
 			return (NULL);
 		_strcpy(cat, s1);
-		for (i = 0; s1[i] != '\0'; i++)
+		for (i = 0; s2[i] != '\0'; i++)
 			cat[s1len++] = s2[i];
 	}
 	cat[s1len++] = '\0';
