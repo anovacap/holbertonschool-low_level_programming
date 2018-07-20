@@ -16,12 +16,11 @@ int *array_range(int min, int max)
 	if (min > max)
 		return (NULL);
 	for (i = min; i <= max; i++)
-                ;
+		;
 	ar = malloc(sizeof(int) * (i));
 	if (ar == NULL)
 		return (NULL);
 	for (k = 0; k < i; k++)
 		ar[k] = min++;
-	printf("min = %i\n", min);
 	return (ar);
 }
