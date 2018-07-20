@@ -11,15 +11,17 @@
 int *array_range(int min, int max)
 {
 	int *ar = NULL;
-	int i;
-	int size = max - min;
+	int i, k;
 
 	if (min > max)
 		return (NULL);
-	ar = malloc(sizeof(int) * (size));
+	for (i = min; i <= max; i++)
+                ;
+	ar = malloc(sizeof(int) * (i));
 	if (ar == NULL)
 		return (NULL);
-	for (i = 0; i < size; i++)
-		ar[i] = min++;
+	for (k = 0; k < i; k++)
+		ar[k] = min++;
+	printf("min = %i\n", min);
 	return (ar);
 }
