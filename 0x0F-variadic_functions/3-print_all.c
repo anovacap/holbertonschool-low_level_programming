@@ -1,6 +1,21 @@
 #include "variadic_functions.h"
 
 /**
+ * _strlen - returns the length of a string
+ * @s: the string
+ *
+ * Return: int length of string
+ */
+unsigned int _strlen(const char *s)
+{
+	int i = 0;
+
+	while (s[i] != '\0')
+		i++;
+	return (i);
+}
+
+/**
  * print_all - prints anything
  * @format: type arguments
  * Return: nothing
@@ -8,7 +23,7 @@
 void print_all(const char * const format, ...)
 {
 	unsigned int i = 0;
-	int x = 0;
+	unsigned int x = 0;
 	va_list args;
 	char *st;
 
@@ -45,7 +60,7 @@ void print_all(const char * const format, ...)
 			x++;
 		}
 		if ((format[i] == 'c' || format[i] == 'i' || format[i] == 'f'
-		     || format[i] == 's') && (i < strlen(format) - x))
+		     || format[i] == 's') && (i < _strlen(format) - x))
 			printf(", ");
 		i++;
 	}
