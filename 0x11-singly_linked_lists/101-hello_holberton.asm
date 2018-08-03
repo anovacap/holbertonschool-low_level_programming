@@ -13,4 +13,4 @@ main:
 	leave
 	ret
 msg:
-	db 	"Hello, Holberton", 13, 10, 0
+	db 	"Hello, Holberton", 13, 10
