@@ -1,16 +1,14 @@
-	extern 	printf
-	
-	section	.text
 	global  main
-	
-main:
-	push 	rbp
-	mov	rbp, rsp
-	
-	mov 	rdi, msg
-	call 	printf
-	
-	leave
-	ret
-msg:
-	db 	"Hello, Holberton", 14, 10
+
+	section .text
+main:	mov	rax, 1
+	mov	rdi, 1
+	mov 	rsi, msg
+	mov	rdx, 17
+	syscall
+	mov 	rax, 60
+	xor	rdi, rdi
+	syscall
+
+	section	.data
+msg:	db 	"Hello, Holberton", 10
