@@ -11,12 +11,16 @@ int sum_listint(listint_t *head)
 	listint_t *mover;
 
 	if (head)
+	{
 		mover = head;
 		while (mover->next != NULL)
 		{
 			sum += mover->n;
 			mover = mover->next;
 		}
+	}
+	else
+		return (0);
 	sum += mover->n;
 	return (sum);
 }
