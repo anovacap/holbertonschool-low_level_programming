@@ -30,6 +30,7 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 		over = mover->next->next;
 		free(mover->next);
 		mover->next = over;
+		return (1);
 	}
 	return (-1);
 }
