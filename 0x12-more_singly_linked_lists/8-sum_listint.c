@@ -8,9 +8,10 @@
 int sum_listint(listint_t *head)
 {
 	int sum = 0;
-	listint_t *mover = head;
+	listint_t *mover;
 
 	if (head)
+		mover = head;
 		while (mover->next != NULL)
 		{
 			sum += mover->n;
