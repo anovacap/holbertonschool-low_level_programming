@@ -5,7 +5,7 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
-#include <unstd.h>
+#include <unistd.h>
 
 void _putchar(char c);
 unsigned int binary_to_uint(const char *b);
