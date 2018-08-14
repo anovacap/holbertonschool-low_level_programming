@@ -9,18 +9,21 @@
 int create_file(const char *filename, char *text_content)
 {
 	int fd;
-	char *txt;
+	int i;
 
+	for (i = 0; text_content[i] != '\0'; i++)
+		;
 	if (filename == NULL)
 		return (-1);
+	if (text_content == NULL)
+	{
+		fd = open(filename, O_CREAT | O_RDWR | O_TRUNC, 0600);
+		close(fd);
+	}
 	fd = open(filename, O_CREAT | O_RDWR | O_TRUNC, 0600);
 	if (fd == -1)
 		return (-1);
-	txt = malloc(sizeof(text_content));
-	if (!txt)
-		return (-1);
-	write(fd, text_content, sizeof(txt));
-	free(txt);
+	write(fd, text_content, i);
 	close(fd);
 	return (1);
 }
