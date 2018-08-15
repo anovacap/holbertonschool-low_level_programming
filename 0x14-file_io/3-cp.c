@@ -8,12 +8,12 @@
  */
 int main(int argc, char *argv[])
 {
-	int fd1, fd2;
+	int fd1, fd2, rd1;
 	char *txt[1024];
 
 	if (argc != 3)
 	{
-		printf("Usage: cp file_from file_to\n");
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
 	if (argv[1])
@@ -22,22 +22,31 @@ int main(int argc, char *argv[])
 		fd2 = open(argv[2], O_CREAT | O_RDWR | O_TRUNC, 0664);
 		if (!fd2)
 		{
-			printf("Error: Can't write to NAME_OF_THE_FILE");
+			dprintf(STDERR_FILENO,
+				"Error: Can't write to %s\n", argv[2]);
 			exit(99);
 		}
-		while(fd1 != EOF)
+		while(rd1 > 0)
 		{
-			read(fd1, txt, 1024);
-			write(fd2, txt, 1024);
+			rd1 = read(fd1, txt, 1024);
+			if (rd1 == 0)
+				break;
+			else
+				write(fd2, txt, 1024);
 		}
 		close(fd1);
-		close(fd2);
-		if (close(fd1) == -1 || close(fd2) == -1)
+		if (close(fd1) == -1)
 		{
-			printf("Error: Can't close fd FD_VALUE");
+			dprintf(STDERR_FILENO, "Error: Can't close fd fd1\n");
+			exit(100);
+		}
+		close(fd2);
+		if (close(fd2) == -1)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't close fd fd2\n");
 			exit(100);
 		}
 	}
-	printf("Error: Can't read from file NAME_OF_THE_FILE\n");
+	dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 	exit(98);
 }
