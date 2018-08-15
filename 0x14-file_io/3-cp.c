@@ -26,13 +26,12 @@ int main(int argc, char *argv[])
 				"Error: Can't write to %s\n", argv[2]);
 			exit(99);
 		}
-		while(rd1 > 0)
+		while (rd1 > 0)
 		{
 			rd1 = read(fd1, txt, 1024);
+			write(fd2, txt, 1024);
 			if (rd1 == 0)
 				break;
-			else
-				write(fd2, txt, 1024);
 		}
 		close(fd1);
 		if (close(fd1) == -1)
