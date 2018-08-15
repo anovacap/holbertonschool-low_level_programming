@@ -20,6 +20,7 @@ int main(int argc, char *argv[])
 	{
 		fd1 = open(argv[1], O_RDONLY);
 		fd2 = open(argv[2], O_CREAT | O_RDWR | O_TRUNC, 0664);
+		rd1 = read(fd1, txt, 1024);
 		if (!fd2)
 		{
 			dprintf(STDERR_FILENO,
@@ -28,24 +29,24 @@ int main(int argc, char *argv[])
 		}
 		while (rd1 > 0)
 		{
+			write(fd2, txt, rd1);
 			rd1 = read(fd1, txt, 1024);
-			write(fd2, txt, 1024);
 			if (rd1 == 0)
 				break;
 		}
-		close(fd1);
 		if (close(fd1) == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't close fd fd1\n");
 			exit(100);
 		}
-		close(fd2);
 		if (close(fd2) == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't close fd fd2\n");
 			exit(100);
 		}
 	}
-	dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+	else
+		dprintf(STDERR_FILENO,
+			"Error: Can't read from file %s\n", argv[1]);
 	exit(98);
 }
