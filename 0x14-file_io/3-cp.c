@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
 	if (argv[1])
 	{
 		fd1 = open(argv[1], O_RDONLY);
-		fd2 = open(argv[2], O_CREAT | O_RDWR | O_TRUNC, 0664);
+		fd2 = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 		rd1 = read(fd1, txt, 1024);
 		if (rd1 == -1)
 		{
