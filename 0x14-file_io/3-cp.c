@@ -8,7 +8,7 @@
  */
 int main(int argc, char *argv[])
 {
-	int fd1, fd2, rd1;
+	int fd1, fd2, rd1, wr;
 	char *txt[1024];
 
 	if (argc != 3)
@@ -21,6 +21,12 @@ int main(int argc, char *argv[])
 		fd1 = open(argv[1], O_RDONLY);
 		fd2 = open(argv[2], O_CREAT | O_RDWR | O_TRUNC, 0664);
 		rd1 = read(fd1, txt, 1024);
+		if (rd1 == -1)
+		{
+			dprintf(STDERR_FILENO,
+				"Error: Can't read from file %s\n", argv[1]);
+			exit(98);
+		}
 		if (!fd2)
 		{
 			dprintf(STDERR_FILENO,
@@ -29,7 +35,13 @@ int main(int argc, char *argv[])
 		}
 		while (rd1 > 0)
 		{
-			write(fd2, txt, rd1);
+			wr = write(fd2, txt, rd1);
+			if (wr == -1)
+			{
+				dprintf(STDERR_FILENO,
+					"Error: Can't write to %s\n", argv[2]);
+				exit(99);
+			}
 			rd1 = read(fd1, txt, 1024);
 			if (rd1 == 0)
 				break;
@@ -46,7 +58,10 @@ int main(int argc, char *argv[])
 		}
 	}
 	else
+	{
 		dprintf(STDERR_FILENO,
 			"Error: Can't read from file %s\n", argv[1]);
-	exit(98);
+		exit(98);
+	}
+	return (0);
 }
