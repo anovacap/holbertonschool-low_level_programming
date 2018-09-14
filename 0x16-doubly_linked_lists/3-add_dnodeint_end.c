@@ -29,5 +29,4 @@ dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 	mover->next = new_dl;
 	new_dl->prev = mover;
 	return (new_dl);
-	free(new_dl);
 }
