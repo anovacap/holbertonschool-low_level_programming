@@ -21,6 +21,5 @@ dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 	if ((*head) != NULL)
 		(*head)->prev = new_dl;
 	(*head) = new_dl;
-	return (new_dl);
-	free(new_dl);
+	return (*head);
 }
