@@ -19,17 +19,20 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	new_dl->n = n;
 	if (new_dl == NULL)
 		return (NULL);
-	if (!idx)
+	if (*h)
 	{
-		new_dl->next = *h;
-		*h = new_dl;
-		return (new_dl);
-	}
-	for (x = 0; x <= idx - 1; x++)
-	{
-		if (mover == NULL)
-			return (NULL);
-		mover = mover->next;
+		if (!idx)
+		{
+			new_dl->next = *h;
+			*h = new_dl;
+			return (new_dl);
+		}
+		for (x = 0; x <= idx - 1; x++)
+		{
+			if (mover == NULL)
+				return (NULL);
+			mover = mover->next;
+		}
 	}
 	new_dl->next = mover->next;
 	mover->next = new_dl;
