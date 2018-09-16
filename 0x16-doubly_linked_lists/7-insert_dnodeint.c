@@ -1,5 +1,4 @@
 #include "lists.h"
-
 /**
  * insert_dnodeint_at_index - Inserts a new node at a given position.
  * @h: Start of doub ll.
@@ -31,10 +30,10 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		if (mover == NULL)
 			return (NULL);
 	}
-	new_dl->next = mover->next;
-	mover->next = new_dl;
-	new_dl->prev = mover;
+	new_dl->next = mover->next;/*ndl-next gets same addr as mover-next*/
+	new_dl->prev = mover;/*ndl-prev = mover which is the addr of current*/
 	if (new_dl->next != NULL)
 		new_dl->next->prev = new_dl;
+	mover->next = new_dl;
 	return (new_dl);
 }
