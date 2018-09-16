@@ -13,8 +13,6 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	dlistint_t *new_dl;
 	dlistint_t *mover = *h;
 
-	if (!*h)
-		return (NULL);
 	new_dl = malloc(sizeof(dlistint_t));
 	if (new_dl == NULL)
 		return (NULL);
@@ -27,6 +25,12 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	if (idx > c)
 		return (NULL);
 	mover = *h;
+	/*if (idx == c)
+	{
+		new_dl->next = NULL;
+		new_dl->prev = mover;
+		mover->next = new_dl;
+		}*/
 	if (!idx)
 	{
 		new_dl->next = *h;
