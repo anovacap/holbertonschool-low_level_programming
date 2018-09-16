@@ -9,15 +9,24 @@
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
 	unsigned int x;
+	unsigned int c = 0;
 	dlistint_t *new_dl;
 	dlistint_t *mover = *h;
 
 	if (!*h)
 		return (NULL);
 	new_dl = malloc(sizeof(dlistint_t));
-	new_dl->n = n;
 	if (new_dl == NULL)
 		return (NULL);
+	new_dl->n = n;
+	while (mover != NULL)
+	{
+		mover = mover->next;
+		c++;
+	}
+	if (idx > c)
+		return (NULL);
+	mover = *h;
 	if (!idx)
 	{
 		new_dl->next = *h;
@@ -27,11 +36,11 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	for (x = 1; x < idx; x++)
 	{
 		mover = mover->next;
-		if (mover == NULL)
-			return (NULL);
+		/*if (mover == NULL)
+		  return (NULL);*/
 	}
-	new_dl->next = mover->next;/*ndl-next gets same addr as mover-next*/
-	new_dl->prev = mover;/*ndl-prev = mover which is the addr of current*/
+	new_dl->next = mover->next;
+	new_dl->prev = mover;
 	if (new_dl->next != NULL)
 		new_dl->next->prev = new_dl;
 	mover->next = new_dl;
