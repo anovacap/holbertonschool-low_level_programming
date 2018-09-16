@@ -31,14 +31,11 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	{
 		new_dl->next = *h;
 		*h = new_dl;
+		new_dl->prev = NULL;
 		return (new_dl);
 	}
 	for (x = 1; x < idx; x++)
-	{
 		mover = mover->next;
-		/*if (mover == NULL)
-		  return (NULL);*/
-	}
 	new_dl->next = mover->next;
 	new_dl->prev = mover;
 	if (new_dl->next != NULL)
