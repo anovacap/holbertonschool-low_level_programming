@@ -10,7 +10,6 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 {
 	unsigned int x;
 	dlistint_t *mover = *head;
-	/*dlistint_t *over;*/
 
 	if (head == NULL || *head == NULL)
 		return (-1);
@@ -18,21 +17,23 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 	{
 		if ((*head)->next != NULL)
 		{
-			mover = (*head)->next;
-			(*head)->next = mover->next;
+			*head = mover->next;
+			free(mover);
+			return (1);
+			/*(*head)->next = mover->next;*/
 		}
 		if ((*head)->next)
 			(*head)->next->prev = NULL;
 	}
-	for (x = 1; x < index; x++)
+	for (x = 0; x < index; x++)
 		mover = mover->next;
 	if (mover->next != NULL)
 	{
 		mover->prev->next = mover->next;
 		mover->next->prev = mover->prev;
 	}
-	if (mover->next == NULL)/*working to change this block*/
+	if (mover->next == NULL)
 		mover->prev = NULL;
-	free(mover);
+	/*free(mover);*/
 	return (1);
 }
