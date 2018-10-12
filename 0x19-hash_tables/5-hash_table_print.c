@@ -25,7 +25,7 @@ void hash_table_print(const hash_table_t *ht)
 				flag = 1;
 			}
 			else
-				printf(", %s: %s", mover->key, mover->value);
+				printf(", '%s': '%s'", mover->key, mover->value);
 			mover = mover->next;
 		}
 		i++;
