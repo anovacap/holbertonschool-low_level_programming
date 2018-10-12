@@ -24,6 +24,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		{
 			free(mover->value);
 			mover->value = strdup(value);
+			return (1);
 			if (mover->value == NULL)
 				return (0);
 		}
