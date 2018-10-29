@@ -11,7 +11,7 @@ void shell_sort(int *array, size_t size)
 	size_t gap = 1, i = 0, j = 0;
 	int t = 0;
 
-	while (gap < size)
+	while (gap <= size)
 		gap = n_gap(gap);
 	gap = p_gap(gap);
 	for (; gap > 0; gap = p_gap(gap))
@@ -19,8 +19,8 @@ void shell_sort(int *array, size_t size)
 		for (i = gap; i < size; i++)
 		{
 			t = array[i];
-			for (j = i; j > gap && array[j -gap] > t; j -= gap)
-				array[j] = array[j -gap];
+			for (j = i; j >= gap && array[j - gap] > t; j -= gap)
+				array[j] = array[j - gap];
 			array[j] = t;
 		}
 		print_array(array, size);
@@ -28,8 +28,8 @@ void shell_sort(int *array, size_t size)
 }
 
 /**
- * n_gap - next gap interval
- * @n: the prevoius gap interval
+ * n_gap - starting at 1 creats gap number
+ * @n: starting gap interval
  * Return: Next gap interval
  */
 size_t n_gap(size_t n)
@@ -39,10 +39,10 @@ size_t n_gap(size_t n)
 
 /**
  * p_gap - prevoius gap interval
- * @n: the next gap interval
+ * @n: the current gap interval
  * Return: previous gap interval
  */
 size_t p_gap(size_t n)
 {
-        return ((n - 1) / 3);
+	return ((n - 1) / 3);
 }
