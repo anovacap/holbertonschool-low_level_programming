@@ -8,6 +8,8 @@
  */
 void quick_sort(int *array, size_t size)
 {
+	if (size < 2)
+		return;
 	_qsort(array, 0, size - 1, size);
 }
 
@@ -49,7 +51,7 @@ ssize_t _partition(int *arr, ssize_t f, ssize_t l, size_t size)
 	{
 		if (arr[j] < pivot)
 		{
-			if (i != j)
+			if (i != j && arr[i] != arr[j])
 			{
 				arr[j] += arr[i];
 				arr[i] = arr[j] - arr[i];
@@ -59,7 +61,7 @@ ssize_t _partition(int *arr, ssize_t f, ssize_t l, size_t size)
 			i++;
 		}
 	}
-	if (i != l)
+	if (i != l && arr[j] != arr[i])
 	{
 		arr[i] += arr[l];
 		arr[l] = arr[i] - arr[l];
