@@ -87,7 +87,7 @@ void tp_dn_mrg(int *arr, size_t strt, size_t mid, size_t end, int *out_arr)
 		}
 	printf("[Done]: ");
 	for (i = strt; i < end - 1; i++)
-		printf("%d,  ", out_arr[i]);
+		printf("%d, ", out_arr[i]);
 	printf("%d\n", out_arr[i]);
 }
 
