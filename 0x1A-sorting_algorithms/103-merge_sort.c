@@ -1,4 +1,5 @@
 #include "sort.h"
+
 /**
  * merge_sort - top down sort function
  * @array: The array to be sorted
@@ -11,7 +12,7 @@ void merge_sort(int *array, size_t size)
 
 	if (size < 2)
 		return;
-	out_arr = malloc(sizeof(size_t) * size);
+	out_arr = malloc(sizeof(int) * size);
 	if (!out_arr)
 		return;
 	tp_dn_mrg_srt(array, out_arr, size);
@@ -93,6 +94,7 @@ void tp_dn_mrg(int *arr, size_t strt, size_t mid, size_t end, int *out_arr)
 /**
  * copy_array - copy sorted values to out_arr
  * @arr: input array
+ * @strt: start index
  * @end: end index
  * @out_arr: output array
  * Return: nothing
