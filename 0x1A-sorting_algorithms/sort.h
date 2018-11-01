@@ -41,6 +41,8 @@ void tp_dn_split_mrg(int *out_arr, size_t strt, size_t end, int *arr);
 void tp_dn_mrg(int *arr, size_t strt, size_t mid, size_t end, int *out_arr);
 void copy_array(int *arr, size_t strt, size_t end, int *out_arr);
 void heap_sort(int *array, size_t size);
+void heapify(int *arr, size_t size);
+void siftdown(int *arr, size_t strt, size_t end, size_t size);
 void radix_sort(int *array, size_t size);
 void bitonic_sort(int *array, size_t size);
 void quick_sort_hoare(int *array, size_t size);
