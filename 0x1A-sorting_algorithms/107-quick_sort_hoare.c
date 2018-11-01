@@ -10,7 +10,7 @@ void quick_sort_hoare(int *array, size_t size)
 {
 	if (size < 2)
 		return;
-	_qsort(array, 0, size - 1, size);
+	_qsort_hp(array, 0, size - 1, size);
 }
 
 /**
@@ -27,9 +27,9 @@ void _qsort_hp(int *arr, ssize_t f, ssize_t l, size_t size)
 
 	if (f < l)
 	{
-		p = _partition(arr, f, l, size);
-		_qsort(arr, f, p, size);
-		_qsort(arr, p + 1, l, size);
+		p = h_partition(arr, f, l, size);
+		_qsort_hp(arr, f, p, size);
+		_qsort_hp(arr, p + 1, l, size);
 	}
 }
 
