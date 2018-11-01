@@ -14,14 +14,14 @@ void quick_sort_hoare(int *array, size_t size)
 }
 
 /**
- * _qsort - sorts array
+ * _qsort_hp - sorts array
  * @arr: array to sort
  * @f: the first index position
  * @l: the last index postion
  * @size: size
  * Return: Nothing
  */
-void _qsort(int *arr, ssize_t f, ssize_t l, size_t size)
+void _qsort_hp(int *arr, ssize_t f, ssize_t l, size_t size)
 {
 	ssize_t p = 0;
 
@@ -34,14 +34,14 @@ void _qsort(int *arr, ssize_t f, ssize_t l, size_t size)
 }
 
 /**
- * _partition - partitions the array
+ * h_partition - partitions the array
  * @arr: array to sort
  * @f: the first index position
  * @l: the last index postion
  * @size: size
  * Return: partition index
  */
-ssize_t _partition(int *arr, ssize_t f, ssize_t l, size_t size)
+ssize_t h_partition(int *arr, ssize_t f, ssize_t l, size_t size)
 {
 	ssize_t i = 0, j = 0;
 	int pivot = arr[f];
@@ -62,6 +62,6 @@ ssize_t _partition(int *arr, ssize_t f, ssize_t l, size_t size)
 			print_array(arr, size);
 		}
 		else
-			return j;
+			return (j);
 	}
 }
