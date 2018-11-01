@@ -66,7 +66,7 @@ void tp_dn_mrg(int *arr, size_t strt, size_t mid, size_t end, int *out_arr)
 
 	printf("Merging...\n");
 	printf("[left]: ");
-	for (i = strt; i < mid -1; i++)
+	for (i = strt; i < mid - 1; i++)
 		printf("%d, ", arr[i]);
 	printf("%d\n[right]: ", arr[i]);
 	for (i = mid; i < end - 1; i++)
