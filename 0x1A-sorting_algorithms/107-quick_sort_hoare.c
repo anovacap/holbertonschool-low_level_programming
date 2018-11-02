@@ -54,14 +54,16 @@ ssize_t h_partition(int *arr, ssize_t f, ssize_t l, size_t size)
 			i++;
 		while (arr[j] > pivot)
 			j--;
-		if (i < j)
+		if (i >= j)
+			return (j);
+		if (i <= j)
 		{
 			arr[i] += arr[j];
 			arr[j] = arr[i] - arr[j];
 			arr[i] -= arr[j];
 			print_array(arr, size);
+			i++;
+			j--;
 		}
-		else
-			return (j);
 	}
 }
