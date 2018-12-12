@@ -5,7 +5,8 @@
  * @second: pointer to the second node
  * Return: pointer to the lowest common ancestor
  */
-binary_tree_t *binary_trees_ancestor(const binary_tree_t *first, const binary_tree_t *second)
+binary_tree_t *binary_trees_ancestor(const binary_tree_t *first,
+	const binary_tree_t *second)
 {
 	binary_tree_t *f_run = (binary_tree_t *)first;
 	binary_tree_t *s_run = (binary_tree_t *)second;
@@ -16,7 +17,6 @@ binary_tree_t *binary_trees_ancestor(const binary_tree_t *first, const binary_tr
 	{
 		while (s_run->parent != NULL)
 		{
-			printf("s_run = %i\n", s_run->n);
 			if (f_run == s_run)
 				break;
 			s_run = s_run->parent;
