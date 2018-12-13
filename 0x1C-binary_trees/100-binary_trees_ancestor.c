@@ -16,16 +16,14 @@ binary_tree_t *binary_trees_ancestor(const binary_tree_t *first,
 		return (NULL);
 	f_run = (binary_tree_t *)first;
 	s_run = (binary_tree_t *)second;
-	while (f_run->parent != NULL)
+	while (f_run)
 	{
-		while (s_run->parent != NULL)
+		while (s_run)
 		{
 			if (f_run == s_run)
-				break;
+				return (f_run);
 			s_run = s_run->parent;
 		}
-		if (f_run == s_run)
-			break;
 		f_run = f_run->parent;
 		s_run = (binary_tree_t *)second;
 	}
