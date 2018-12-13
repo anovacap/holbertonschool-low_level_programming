@@ -14,7 +14,7 @@ binary_tree_t *binary_trees_ancestor(const binary_tree_t *first,
 		return (NULL);
 	if (!first->parent || !second->parent)
 		return (NULL);
- 	f_run = (binary_tree_t *)first;
+	f_run = (binary_tree_t *)first;
 	s_run = (binary_tree_t *)second;
 	while (f_run->parent != NULL)
 	{
