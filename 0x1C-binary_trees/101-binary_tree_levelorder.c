@@ -52,13 +52,11 @@ void binary_print_levelorder(const binary_tree_t *tree,
  */
 void binary_tree_levelorder(const binary_tree_t *tree, void (*func)(int))
 {
-	size_t height;
+	size_t height = binary_tree_height(tree);
 	size_t i = 0;
 
 	if (!tree || !func)
-		return;
-	height = binary_tree_height(tree);
-	printf("height = %lu\n", height);
+		return;	
 	while (i < height)
 	{
 		binary_print_levelorder(tree, func, i);
